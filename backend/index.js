@@ -1,40 +1,53 @@
 import express from "express";
-import bodyParser from "body-parser"
+import bodyParser from "body-parser";
 import mongoose from "mongoose";
 import cors from "cors";
 import dotenv from "dotenv";
 import helmet from "helmet";
 import morgan from "morgan";
-import { error } from "console";
-import KPI from "./models/KPI";
-import { kpis } from "./data/data";
+import KPI from "./models/KPI.js";
+import { kpis,products } from "./data/data.js";
+import kpiRoutes from "./routes/kpi.js";
+import productRoutes from "./routes/product.js";
+import Product from "./models/Product.js"
 
-/**CONFIGURATIONS */
+
+/** CONFIGURATIONS */
 dotenv.config();
-const app = express()
+const app = express();
 app.use(express.json());
 app.use(helmet());
-app.use(helmet.crossOriginResourcePolicy({policy: "cross-origin"}));
+app.use(helmet.crossOriginResourcePolicy({ policy: "cross-origin" }));
 app.use(morgan("common"));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:false}));
+app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 
-console.log("hellooooooooooo")
 const PORT = process.env.PORT || 9000;
 
-app.use("/kpi",kpiRoutes)
+// Routes
+app.use("/kpi", kpiRoutes);
+app.use("/product", productRoutes);
 
-
-
+// Database connection
 mongoose
-.connect(process.env.MONGO_URL,{
-    useNewUrlParser : true,
-    useUnifiedTopology : true,
-})
-.then(async()=>{
-    app.listen(PORT, ()=>console.log(`PORT IS LISTENING AT ${PORT}`))
-    await mongoose.connect.db.dropDataBase()
-    KPI.insertMany(kpis);
-})
-.catch((error)=> console.log(`DID NOT CONNECT: ${error}`))
+  .connect(process.env.MONGO_URL)
+  .then(async () => {
+    app.listen(PORT, () => console.log(`PORT IS LISTENING AT ${PORT}`));
+    // Comment out or remove the line below if you don't have permissions to drop the database
+    // await mongoose.connection.db.dropDatabase();
+    // Optionally, check if the KPI collection is empty before inserting data
+
+
+    // const existingKpis = await KPI.find();
+    // if (existingKpis.length === 0) {
+    //   KPI.insertMany(kpis);
+    // }
+
+     const existingProducts = await Product.find();
+    if (existingProducts.length === 0) {
+      Product.insertMany(products);
+    }
+    
+  })
+  .catch((error) => console.log(`DID NOT CONNECT: ${error}`));
