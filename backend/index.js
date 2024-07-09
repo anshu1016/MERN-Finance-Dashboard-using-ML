@@ -53,6 +53,7 @@ mongoose
     //  if (existingTransactions.length === 0) {
     //   Transaction.insertMany(transactions);
     //  }
+     Transaction.insertMany(transactions);
     
   })
   .catch((error) => console.log(`DID NOT CONNECT: ${error}`));
