@@ -4,9 +4,9 @@ import {
   GetProductsResponse,
   GetTransactionsResponse,
 } from "./types.ts";
-
+const URL = "https://finance-app-backend-2na6.onrender.com/"
 export const api = createApi({
-  baseQuery: fetchBaseQuery({ baseUrl: import.meta.env.VITE_BASE_URL }),
+  baseQuery: fetchBaseQuery({ baseUrl: URL}),
   reducerPath: "main",
   tagTypes: ["Kpis", "Products", "Transactions"],
   endpoints: (build) => ({
