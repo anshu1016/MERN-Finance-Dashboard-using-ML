@@ -1,6 +1,11 @@
 # MERN Finance Dashboard using Machine Learning Predictions
 
 ![Project Preview](https://github.com/user-attachments/assets/7d247f7d-04cf-45f8-99c9-53c1f77cffab) <!-- Replace with your project image -->
+<!-- <img width="959" alt="image" src="https://github.com/user-attachments/assets/5c78256d-9b59-4c7a-9dfd-1c5ae9f4a58e">
+ --> Dashboard with real-time data visualization and financial insights
+
+<!-- <img width="959" alt="image" src="https://github.com/user-attachments/assets/6a238f49-742b-4e66-8432-e612fe322bbd">
+ --> Machine Learning-based financial predictions
 
 A fully functional **Finance Dashboard** built using the **MERN** stack, integrating **Machine Learning** for future financial predictions. This project demonstrates the power of modern web development with **Vite**, **Redux Toolkit**, **Material UI**, and **Recharts** on the frontend. The backend leverages **Node.js**, **Express.js**, and **MongoDB**, offering seamless data management and advanced analytics.
 
