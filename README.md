@@ -53,20 +53,32 @@ Check out the live demo: [Finance Dashboard Demo](https://mern-finance-ml-app.ne
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/MERN-Finance-Dashboard.git
-   cd MERN-Finance-Dashboard```
+   cd MERN-Finance-Dashboard
+   ```
 
 2. Install dependencies for the backend:
-   ```bash cd backend
-    npm install```
+   ```bash
+
+cd backend
+npm install
+
+```
+
 3. Install dependencies for the frontend:
-    ```bash cd frontend
-    npm install```
+    ```bash
+cd frontend
+npm install
+
+```
+
 4. Create a .env file in the backend directory and add the following environment variables:
-  ``` MONGO_URI=<your-mongodb-uri>
+  ```
+MONGO_URI=<your-mongodb-uri>
     JWT_SECRET=<your-secret-key>```
 
 5. Run both frontend and backend:
-   ```bash  # Run frontend
+   ```bash
+ # Run frontend
     cd frontend
     npm run dev
     
