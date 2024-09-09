@@ -58,9 +58,8 @@ Check out the live demo: [Finance Dashboard Demo](https://mern-finance-ml-app.ne
 
 2. Install dependencies for the backend:
    ```bash
-
-cd backend
-npm install
+      cd backend
+      npm install
 
 ```
 
@@ -73,18 +72,22 @@ npm install
 
 4. Create a .env file in the backend directory and add the following environment variables:
   ```
-MONGO_URI=<your-mongodb-uri>
-    JWT_SECRET=<your-secret-key>```
+      MONGO_URI=<your-mongodb-uri>
+    JWT_SECRET=<your-secret-key>
+   ```
 
 5. Run both frontend and backend:
    ```bash
- # Run frontend
-    cd frontend
-    npm run dev
-    
-    # Run backend
-    cd backend
-    npm run dev ```
+       # Run frontend
+          cd frontend
+          npm run dev
+          
+          # Run backend
+          cd backend
+          npm run dev
+    ```
+
+
 
 ## Progressive Web App
 This app is built as a Progressive Web App (PWA), allowing it to be used offline and installed on any device. You can make it accessible even without an active internet connection, and it's ready to serve as a native app experience.
